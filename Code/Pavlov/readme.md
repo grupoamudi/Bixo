@@ -27,6 +27,7 @@ O código possui os seguintes programas por enquanto:
 ```
 
 ## Contribuintes:
+```
 -> Matheus Comp 
     └── Neurônio
     
@@ -44,3 +45,4 @@ O código possui os seguintes programas por enquanto:
 -> Lloyd Rodrigues
     └── Camada
     └── Rede
+```
