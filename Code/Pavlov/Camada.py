@@ -16,3 +16,11 @@ class Camada:
 
         self.saidasDaCamada = novasSaidas
         
+    def alimentarNeuronios (self, entradas):
+        for i in self.neuronios:
+            i.dendritos = entradas
+            i.sinapse()
+
+    def feedForward (self):
+        self.getSaidas()
+        return self.saidasDaCamada
