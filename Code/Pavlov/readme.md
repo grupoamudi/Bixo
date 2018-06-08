@@ -27,6 +27,20 @@ O código possui os seguintes programas por enquanto:
 ```
 
 ## Contribuintes:
--> Matheus Comp
+-> Matheus Comp 
+    └── Neurônio
+    
 -> Vinícius Ariel
+    └── Camada
+    └── Rede
+    
 -> Giulia Nardi
+    └── Camada
+    
+-> Alexandre Frederick
+    └── Camada
+    └── Rede
+    
+-> Lloyd Rodrigues
+    └── Camada
+    └── Rede
