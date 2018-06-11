@@ -1,6 +1,7 @@
 import Rede
 import Camada
 import Neuronio
+import CriadorDeRede
 
 n1 = Neuronio.Neuronio(4)
 n2 = Neuronio.Neuronio(4)

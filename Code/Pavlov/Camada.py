@@ -9,6 +9,11 @@ class Camada:
     def __init__(self, neuroniosInput):
         self.neuronios = neuroniosInput
 
+    def alimentarNeuronios (self, entradas):
+        for i in self.neuronios:
+            i.dendritos = entradas
+            i.sinapse()
+
     def getSaidas (self):
         novasSaidas = []
         for i in self.neuronios:
@@ -16,10 +21,7 @@ class Camada:
 
         self.saidasDaCamada = novasSaidas
         
-    def alimentarNeuronios (self, entradas):
-        for i in self.neuronios:
-            i.dendritos = entradas
-            i.sinapse()
+  
 
     def feedForward (self):
         self.getSaidas()
