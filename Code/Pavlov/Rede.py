@@ -31,6 +31,7 @@ class Rede:
         #para as camadas ocultas e de entrada:
         erro = []
         for c in range(len(self.camadas) - 2, -1, -1):
-            erro = [sum(neuronio.glia for neuronio in self.camadas[c].neuronios)]
+            erro = [sum([neuronio.glia * neuronio.mielina[n] for neuronio in self.camadas[c+1].neuronios])
+                    for n in range(len(self.camadas[c].neuronios))]
             self.camadas[c].corrigirCamada(erro)
             
