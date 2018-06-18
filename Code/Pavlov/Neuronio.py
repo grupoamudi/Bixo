@@ -18,7 +18,7 @@ class Neuronio:
     def sinal(self, entrada):
         self.dendritos = entrada
 
-    def setAxonio(self):
+    def sinapse(self):
         self.axonio = self.logistica(self.produtoEscalar(self.dendritos, self.mielina))
 
     def setGlia(self, erro):
@@ -31,7 +31,7 @@ class Neuronio:
     
     def produtoEscalar(self, vetorA, vetorB):
         resultado = 0
-        for i in range(len(vetorA)):
+        for i in range(len(vetorB)):
             resultado += vetorA[i] * vetorB[i]
         return resultado
         

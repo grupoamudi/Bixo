@@ -15,7 +15,7 @@ class Rede:
             camada.alimentarNeuronios(entradasTemp)
             entradasTemp = camada.feedForward()
         
-    def getResposta (self):
+    def getIndiceResposta (self):
         ultimaCamada = self.camadas[-1]
         maiorSaida = 0
         for i in range(len(self.camadas[-1].neuronios)):

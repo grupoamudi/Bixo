@@ -8,7 +8,7 @@ class Camada:
     #metodos:
     def __init__(self, neuroniosInput):
         self.neuronios = neuroniosInput
-        self.saidasDaCamada = [0 for i in range(self.neuronios)]
+        self.saidasDaCamada = [0 for i in range(len(self.neuronios))]
 
     def updateSaidas (self):
         for i in range(len(self.neuronios)):
