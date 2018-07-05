@@ -34,7 +34,7 @@ def inicializarTreino():
 rede = CriadorDeRede.criarRede()
 dataset = []
 respostas = []
-epocas = 100
+epocas = 50
 
 
 
@@ -45,7 +45,6 @@ inicializarTreino()
 for k in range(epocas):
     for i in dataset:
         for j in range(len(respostas)):
-            print(len(respostas))
             respostas[j] = i[rede.entradas + j]
         rede.alimentarRede(i)
         rede.aprender(respostas)
@@ -58,13 +57,29 @@ c = [1,0]
 d = [1,1]
 
 rede.alimentarRede(a)
-print(rede.camadas[-1].feedForward())
+if (rede.camadas[-1].feedForward()[0] > rede.camadas[-1].feedForward()[1]):
+    print("Se Falso e Falso, então: Verdadeiro")
+else:
+    print("Se Falso e Falso, então: Falso")
+    
 rede.alimentarRede(b)
-print(rede.camadas[-1].feedForward())
+if (rede.camadas[-1].feedForward()[0] > rede.camadas[-1].feedForward()[1]):
+    print("Se Falso e Verdadeiro, então: Verdadeiro")
+else:
+    print("Se Falso e Verdadeiro, então: Falso")
+    
 rede.alimentarRede(c)
-print(rede.camadas[-1].feedForward())
+if (rede.camadas[-1].feedForward()[0] > rede.camadas[-1].feedForward()[1]):
+    print("Se Verdadeiro e Falso, então: Verdadeiro")
+else:
+    print("Se Verdadeiro e Falso, então: Falso")
+    
 rede.alimentarRede(d)
-print(rede.camadas[-1].feedForward())
+if (rede.camadas[-1].feedForward()[0] > rede.camadas[-1].feedForward()[1]):
+    print("Se Verdadeiro e Verdadeiro, então: Verdadeiro")
+else:
+    print("Se Verdadeiro e Verdadeiro, então: Falso")
+    
 #print (rede.getIndiceResposta())
 
 
