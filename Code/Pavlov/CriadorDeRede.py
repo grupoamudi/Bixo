@@ -36,5 +36,5 @@ def criarRede():
                 camada.append(novoNeuronio)
             camadasDaRede.append(camada)
 
-    rede = Rede.Rede(numeroDeCamadas, camadasDaRede)
+    rede = Rede.Rede(numeroDeCamadas, camadasDaRede, numeroDeEntradas)
     return rede

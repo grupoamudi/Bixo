@@ -3,9 +3,11 @@ import Camada
 class Rede:
     #atributos:
     camadas = []
+    entradas = 0
 
     #metodos:
-    def __init__(self, numCamadas, matrizNeuronios):
+    def __init__(self, numCamadas, matrizNeuronios, numeroDeEntradas):
+        self.entradas = numeroDeEntradas
         for i in range(numCamadas):
             self.camadas.append(Camada.Camada(matrizNeuronios[i]))
     

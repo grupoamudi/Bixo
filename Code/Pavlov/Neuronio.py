@@ -26,8 +26,8 @@ class Neuronio:
     
     def corrigirNeuronio(self, erro):
         self.setGlia(erro)
-        for index in range(len(self.dendritos)):
-            self.mielina[index] -= self.glia * self.dendrito[index]
+        for index in range(len(self.mielina)):
+            self.mielina[index] -= self.glia * self.dendritos[index]
     
     def produtoEscalar(self, vetorA, vetorB):
         resultado = 0
