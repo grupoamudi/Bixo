@@ -6,6 +6,8 @@ O script de TesteTreino.py está testando a convergência simples dos pesos em u
 -> Backpropagation
 -> Arquitetura de Rede não adequada
 
+O script do Neuronio foi corrigido e está completamente documentado. Resta agora corrigir o tratamento de treino contido no Camada.py e na Rede.py.
+
 ## Estrutura
 O usuário define por meio do programa a arquitetura de sua rede. Isso gerará um arquivo de definição de hiperparâmetros de uma rede neural. O programa de treinamento treinará a rede, assim gerando outro arquivo com os pesos treinados que funcionam para as redes que possuem os hiperparâmetros definidos pela rede.
 O código possui os seguintes programas por enquanto:
