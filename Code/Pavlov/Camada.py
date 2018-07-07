@@ -26,3 +26,9 @@ class Camada:
     def corrigirCamada(self, erro):
         for n in range(len(self.neuronios)):
             self.neuronios[n].corrigirNeuronio(erro[n])
+
+    def getGlias(self):
+        glias = []
+        for i in self.neuronios:
+            glias.append(i.glia)
+        return glias

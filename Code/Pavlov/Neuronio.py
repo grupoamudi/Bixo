@@ -46,7 +46,7 @@ class Neuronio:
     # 4. SetGlia: Determina o invariante do vetor gradiente
     #  descendente.
     def setGlia(self, erro):
-        self.glia = erro * self.derivLogistica(self.produtoEscalar(self.mielina, self.dendritos))
+        self.glia = erro * self.derivLogistica(self.produtoEscalar(self.dendritos, self.mielina))
 
     # 5. ProdutoEscalar: Retorna o produto escalar do vetor A
     #  com o vetor B.
@@ -70,4 +70,4 @@ class Neuronio:
     def corrigirNeuronio(self, erro):
         self.setGlia(erro)
         for i in range(len(self.mielina)):
-            self.mielina[index] -= self.glia * self.dendritos[index]
+            self.mielina[i] -= self.glia * self.dendritos[i]
