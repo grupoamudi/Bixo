@@ -69,5 +69,8 @@ class Neuronio:
     # 8. Corrigir Neuronio: Corrige as mielinas do neuronio.
     def corrigirNeuronio(self, erro):
         self.setGlia(erro)
+            
+    # 9. Atualizar Pesos: Altera os pesos do neuronio
+    def atualizarMielinas(self):
         for i in range(len(self.mielina)):
             self.mielina[i] -= self.glia * self.dendritos[i]

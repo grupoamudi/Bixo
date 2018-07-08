@@ -4,7 +4,49 @@ import Neuronio
 import CriadorDeRede
 import csv
 
-def verificarDesempenho():
+def verificarDesempenho(i, dataset, rede):
+    rede.alimentarRede(dataset[i])
+    print(rede.camadas[-1].feedForward())
+
+def verificarDesempenhoOU():
+    a = [0,0]
+    b = [0,1]
+    c = [1,0]
+    d = [1,1]
+
+    rede.alimentarRede(a)
+    if (rede.camadas[-1].feedForward()[0] < 0.5):
+        print("Se Falso ou Falso, então: Falso")
+    else:
+        print("Se Falso ou Falso, então: Verdadeiro")
+
+    print(rede.camadas[-1].feedForward())
+    
+    rede.alimentarRede(b)
+    if (rede.camadas[-1].feedForward()[0] > 0.5):
+        print("Se Falso ou Verdadeiro, então: Verdadeiro")
+    else:
+        print("Se Falso ou Verdadeiro, então: Falso")
+
+    print(rede.camadas[-1].feedForward())
+    
+    rede.alimentarRede(c)
+    if (rede.camadas[-1].feedForward()[0] > 0.5):
+        print("Se Verdadeiro ou Falso, então: Verdadeiro")
+    else:
+        print("Se Verdadeiro ou Falso, então: Falso")
+
+    print(rede.camadas[-1].feedForward())
+    
+    rede.alimentarRede(d)
+    if (rede.camadas[-1].feedForward()[0] > 0.5):
+        print("Se Verdadeiro ou Verdadeiro, então: Verdadeiro")
+    else:
+        print("Se Verdadeiro ou Verdadeiro, então: Falso")
+
+    print(rede.camadas[-1].feedForward())
+
+def verificarDesempenhoE():
     a = [0,0]
     b = [0,1]
     c = [1,0]
@@ -60,7 +102,7 @@ def verificarMielina():
                 print("\t\tMielina {}: ".format(j.mielina.index(k)) + str(k))
 
 def inicializarTreino():
-    with open("Data_E.csv") as data:
+    with open("DataIRIS.csv") as data:
         dados = csv.reader(data)
         for linha in dados:
             linha = [float(i) for i in linha]
@@ -78,7 +120,7 @@ epocas = 500
 
 verificarMielina()
 
-verificarDesempenho()
+#verificarDesempenhoE()
 
 inicializarTreino()
 
@@ -91,7 +133,13 @@ for k in range(epocas):
 
 verificarMielina()
 
-verificarDesempenho()
+#verificarDesempenhoE()
+
+verificarDesempenho(0, dataset, rede)
+verificarDesempenho(1, dataset, rede)
+verificarDesempenho(2, dataset, rede)
+
+#verificarDesempenhoOU()
     
 #print (rede.getIndiceResposta())
 

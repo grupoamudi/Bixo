@@ -32,3 +32,7 @@ class Camada:
         for i in self.neuronios:
             glias.append(i.glia)
         return glias
+
+    def atualizarMielinas(self):
+        for n in range(len(self.neuronios)):
+            self.neuronios[n].atualizarMielinas()
