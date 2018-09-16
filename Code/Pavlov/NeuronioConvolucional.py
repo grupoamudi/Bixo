@@ -9,17 +9,37 @@ class NeuronioConvolucional:
     axonio = [] # saida
     glia = 0 # passo de correção
     gliaAntiga = 0 # passo de correção por momentum
+    larguraDaImagem = 0
+    alturaDaImagem = 0
+    stride = 0
+    filtro = 0
 
     # metodos:
+    # __init__: e preciso especificar a largura e a altura da imagem.
+    #   stride e filtro sao características intrínsecas ao neuronio de convolucao.
+    #   stride representa o passo de leitura do filtro sobre a imagem.
+    #   filtro representa a dimensao do filtro que este neuronio representa.
     def __init__(self, larguraDaImagem, alturaDaImagem, stride, filtro):
+        # Inicializacao de pesos aleatorios para a matriz do filtro deste neuronio.
         novaMielina = []
         for i in range(filtro):
             novaMielina.insert(i,[])
+            self.dendritos.insert(i,[])
         for i in range(filtro):
             for j in range(filtro):
                 novaMielina[i].insert(j,random.random())
+                self.dendritos.insert(j,0)
         self.mielina = novaMielina
+        # Descricao finalizada.
 
+        # Atualiza parametros do neuronio.
+        self.larguraDaImagem = larguraDaImagem
+        self.alturaDaImagem = alturaDaImagem
+        self.stride = stride
+        self.filtro = filtro
+        # Descricao finalizada
+
+        # Define o tamanho da matriz de saida para o neuronio.
         percursoHorizontal = int(((larguraDaImagem - filtro)) / stride)
         percursoVertical = int(((alturaDaImagem - filtro)) / stride)
 
@@ -27,15 +47,15 @@ class NeuronioConvolucional:
             self.axonio.insert(i,[])
             for j in range(percursoHorizontal):
                 self.axonio[i].insert(j,0)
+        # Descricao finalizada.
 
     def sinal(self, novaEntrada):
-        for i in range (len(novaEntrada)):
-            for j in range (len(novaEntrada[i])):
-                self.dendritos[i][j] = novaEntada[i][j]
+        print (novaEntrada)
+        self.dendritos = novaEntrada
 
-    def sinapse(self, stride, largura, altura):
-        percursoHorizontal = (largura - len(mielina)) / stride
-        percursoVertical = (altura - len(mielina)) / stride
+    def sinapse(self):
+        percursoHorizontal = int((self.larguraDaImagem - len(self.mielina)) / self.stride)
+        percursoVertical = int((self.alturaDaImagem - len(self.mielina)) / self.stride)
         for i in range(percursoVertical):
             for j in range(percursoHorizontal):
                 self.axonio[i][j] = self.logistica(self.produtoEscalar(self.dendritos, self.mielina))
@@ -53,7 +73,7 @@ class NeuronioConvolucional:
     # Funções de Aprendizado
     def setGlia(self, erro):
         self.glia = erro * self.axonio * (1 - self.axonio)
-    
+
     def corrigirNeuronio(self, erro):
         self.setGlia(erro)
         for index in range(len(self.dendritos)):
@@ -65,7 +85,7 @@ class NeuronioConvolucional:
             print("Coluna {}".format(i))
             for j in range (len(self.mielina[i])):
                 print ("\t Linha {} : {}".format(j,self.mielina[i][j]))
-                            
+
     def printAxonio(self):
         for i in range (len(self.axonio)):
             print("Coluna {}".format(i))
@@ -76,3 +96,15 @@ class NeuronioConvolucional:
         a = [[1,1,1],[1,1,1],[1,1,1]]
         b = [[3,2,1],[6,5,4],[9,8,7]]
         print (self.produtoEscalar(a,b))
+
+    def printTamanhoMielina(self):
+        print (len(self.mielina) * len(self.mielina[0]))
+
+    def printTamanhoSaida(self):
+        print (len(self.axonio) * len(self.axonio[0]))
+
+    def printDendritos(self):
+        for i in range (len(self.dendritos)):
+            print("Coluna {}".format(i))
+            for j in range (len(self.dendritos[i])):
+                print ("\t Linha {} : {}".format(j,self.dendritos[i][j]))
