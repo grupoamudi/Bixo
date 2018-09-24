@@ -66,11 +66,11 @@ class Neuronio:
     def derivLogistica (self, x):
         return self.logistica(x) * (1 - self.logistica(x))
 
-    # 8. Corrigir Neuronio: Corrige as mielinas do neuronio.
+    # 8. Corrigir Neuronio: Atualiza o gradiente descendente.
     def corrigirNeuronio(self, erro):
         self.setGlia(erro)
             
-    # 9. Atualizar Pesos: Altera os pesos do neuronio
+    # 9. Atualizar Pesos: Atualiza os pesos do neuronio
     def atualizarMielinas(self):
         for i in range(len(self.mielina)):
             self.mielina[i] -= self.glia * self.dendritos[i]
