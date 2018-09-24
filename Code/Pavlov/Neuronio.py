@@ -1,3 +1,11 @@
+#############################################
+# Nome: Camada.py                           #
+# Projeto: Projeto Pavlov                   #
+# Autoria: Grupo aMuDi                      #
+# Dependencia: random e math                #
+# Status: Concluido                         #
+#############################################
+
 import math
 import random
 
