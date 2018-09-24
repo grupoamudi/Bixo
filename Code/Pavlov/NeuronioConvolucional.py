@@ -1,16 +1,31 @@
+#############################################
+# Nome: NeuronioConvolucional.py            #
+# Projeto: Projeto Pavlov                   #
+# Autoria: Grupo aMuDi                      #
+# Dependencia: random, math e Neuronio      #
+# Status: Concluido                         #
+#############################################
 import math
 import random
 import Neuronio
 
+# Classe NeuronioConvolucional: Representa um neoronio convolucional.
 class NeuronioConvolucional:
-    # atributos:
-    mielina = [] # pesos
-    dendritos = [] # entradas
-    axonio = [] # saida
-    glia = 0 # passo de correção
-    gliaAntiga = 0 # passo de correção por momentum
+    #Atributos:
+    # 1. mielina: Representa a matriz de peso. O filtro deste neuronio.
+    mielina = []
+    # 2. dendritos: Representa a matri de leitura deste neuronio. Sera do
+    ## tamanho do filtro.
+    dendritos = []
+    # 3. axonio: Representa a imagem de saida deste neuronio.
+    axonio = []
+    # 4. glia: Representa o gradiente descendente deste neuronio.
+    glia = 0
+    # 5. gliaAntiga: Representa o gradiente descendente antigo deste neuronio.
+    gliaAntiga = 0
 
-    # metodos:
+    #Metodos:
+    # 1. __init__ :
     def __init__(self, larguraDaImagem, alturaDaImagem, stride, filtro):
         novaMielina = []
         for i in range(filtro):
