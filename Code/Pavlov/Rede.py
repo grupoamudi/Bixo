@@ -4,13 +4,13 @@ import Camada
 class Rede:
     #Atributos:
     # 1. Camadas: Vetor que guarda os objetos da classe Camada que pertencem a rede.
-    #  Do menor para o maior, segue a ordem de entrada para a saida.
+    #  Do menor para o maior indice, segue a ordem das camadas desde a entrada até a saida.
     camadas = []
-    # 2. Entradas: Valor que indica de quantas entradas esta rede espera receber
+    # 2. Entradas: Valor que indica o numero de entradas que esta rede espera receber
     entradas = 0
 
     #Metodos:
-    # 1. Construtor: Define o numero de entradas que essa rede espera receber e cria atualiza
+    # 1. Construtor: Define o numero de entradas que essa rede espera receber e cria/atualiza
     #  os neuronios que pertencem a cada camada.
     def __init__(self, numCamadas, matrizNeuronios, numeroDeEntradas):
         self.entradas = numeroDeEntradas
@@ -26,7 +26,7 @@ class Rede:
             entradasTemp = camada.feedForward()
 
     # 3. GetIndiceResposta: Retorna o indice do neuronio na ultima camada
-    #  que obteve o maior resultado
+    #  que retorna o maior valor de saída
     def getIndiceResposta (self):
         ultimaCamada = self.camadas[-1]
         maiorSaida = 0
@@ -37,12 +37,12 @@ class Rede:
         return indiceNeuronioMax
 
     # 4. Aprender: Algoritmo de Backpropagation
-    def aprender(self, alvos):
+    def aprender(self, gabarito):
         #para a ultima camada:
-        # alvos - saida ou saida - alvos?
+        # gabarito: vetor que guarda a saida esperada  
         erro = []
-        for i in range(len(alvos)):
-            erro.append((-1)*(alvos[i] - self.camadas[-1].feedForward()[i]))
+        for i in range(len(gabarito)):
+            erro.append((-1)*(gabarito[i] - self.camadas[-1].feedForward()[i]))
         self.camadas[-1].corrigirCamada(erro)
         #para as camadas ocultas e de entrada:
         erro = []
