@@ -1,5 +1,5 @@
 #############################################
-# Nome: Camada.py                           #
+# Nome: Neuronio.py                         #
 # Projeto: Projeto Pavlov                   #
 # Autoria: Grupo aMuDi                      #
 # Dependencia: random e math                #
