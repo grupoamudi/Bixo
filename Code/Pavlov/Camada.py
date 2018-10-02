@@ -20,7 +20,7 @@ class Camada:
     
     #Metodos:
     # 1. __init__ : Preenche a camada criada com o numero de neuronios
-    ## especificados na entrada da funcao com pesos aleatorios.
+    ## especificados na entrada da funcao com pesos aleatorios. (Construtor)
     def __init__(self, neuroniosInput):
         self.neuronios = neuroniosInput
         self.saidasDaCamada = [0 for i in range(len(self.neuronios))]
