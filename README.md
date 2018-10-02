@@ -22,3 +22,4 @@
 | ![Vinytt](https://avatars2.githubusercontent.com/u/38005211?s=460&v=4) | Vinícius Ariel | https://github.com/Vinytt | Design, I.A. e Movimentação | Arte Conceitual |
 | ![anaqueo](https://avatars2.githubusercontent.com/u/38076093?s=400&v=4) | Raquel de Andrade | https://github.com/anaqueo | Interação, Sensoriamento e Movimentação | - |
 | ![Tumache](https://avatars0.githubusercontent.com/u/38513681?s=400&v=4) | Henrique Geribello | https://github.com/tumache | Interação, Sensoriamento e Movimentação | - |
+| ![becogriep](https://avatars0.githubusercontent.com/u/22503576?s=400&v=4) | Gabriel Griep | https://github.com/becogriep | I.A., Sensoriamento e Movimentação | - |
