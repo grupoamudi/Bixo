@@ -8,21 +8,21 @@ def verificarDesempenho(i, dataset, rede):
     rede.alimentarRede(dataset[i])
     print(rede.camadas[-1].feedForward())
 
-def verificarDesempenhoOU():
-    a = [0,0]
+def verificarDesempenhoOU(): #aprender o conceito de OU
+    a = [0,0] 
     b = [0,1]
     c = [1,0]
     d = [1,1]
 
-    rede.alimentarRede(a)
-    if (rede.camadas[-1].feedForward()[0] < 0.5):
-        print("Se Falso ou Falso, então: Falso")
-    else:
+    rede.alimentarRede(a) #alimenta a rede com a = [0,0], siginificando Falso ou Falso
+    if (rede.camadas[-1].feedForward()[0] > 0.5): #se o valor obtido for maior que 0.5, sera verdadeiro
         print("Se Falso ou Falso, então: Verdadeiro")
+    else:
+        print("Se Falso ou Falso, então: Falso")
 
-    print(rede.camadas[-1].feedForward())
+    print(rede.camadas[-1].feedForward()) #printa a resposta obtida
     
-    rede.alimentarRede(b)
+    rede.alimentarRede(b) #alimenta a rede com b = [0,1], siginificando Falso ou Verdadeiro
     if (rede.camadas[-1].feedForward()[0] > 0.5):
         print("Se Falso ou Verdadeiro, então: Verdadeiro")
     else:
@@ -30,7 +30,7 @@ def verificarDesempenhoOU():
 
     print(rede.camadas[-1].feedForward())
     
-    rede.alimentarRede(c)
+    rede.alimentarRede(c) #alimenta a rede com c = [1,0], siginificando Verdadeiro ou Falso
     if (rede.camadas[-1].feedForward()[0] > 0.5):
         print("Se Verdadeiro ou Falso, então: Verdadeiro")
     else:
@@ -38,7 +38,7 @@ def verificarDesempenhoOU():
 
     print(rede.camadas[-1].feedForward())
     
-    rede.alimentarRede(d)
+    rede.alimentarRede(d) #alimenta a rede com d = [1,1], siginificando Verdadeiro ou Verdadeiro
     if (rede.camadas[-1].feedForward()[0] > 0.5):
         print("Se Verdadeiro ou Verdadeiro, então: Verdadeiro")
     else:
@@ -46,13 +46,13 @@ def verificarDesempenhoOU():
 
     print(rede.camadas[-1].feedForward())
 
-def verificarDesempenhoE():
+def verificarDesempenhoE(): #aprender o conceito de E
     a = [0,0]
     b = [0,1]
     c = [1,0]
     d = [1,1]
 
-    rede.alimentarRede(a)
+    rede.alimentarRede(a) #alimenta a rede com a = [0,0], siginificando Falso e Falso
     if (rede.camadas[-1].feedForward()[0] > 0.5):
         print("Se Falso e Falso, então: Verdadeiro")
     else:
@@ -60,7 +60,7 @@ def verificarDesempenhoE():
 
     print(rede.camadas[-1].feedForward())
     
-    rede.alimentarRede(b)
+    rede.alimentarRede(b) #alimenta a rede com b = [0,1], siginificando Falso e Verdadeiro
     if (rede.camadas[-1].feedForward()[0] > 0.5):
         print("Se Falso e Verdadeiro, então: Verdadeiro")
     else:
@@ -68,7 +68,7 @@ def verificarDesempenhoE():
 
     print(rede.camadas[-1].feedForward())
     
-    rede.alimentarRede(c)
+    rede.alimentarRede(c) #alimenta a rede com c = [1,0], siginificando Verdadeiro e Falso
     if (rede.camadas[-1].feedForward()[0] > 0.5):
         print("Se Verdadeiro e Falso, então: Verdadeiro")
     else:
@@ -76,7 +76,7 @@ def verificarDesempenhoE():
 
     print(rede.camadas[-1].feedForward())
     
-    rede.alimentarRede(d)
+    rede.alimentarRede(d) #alimenta a rede com d = [1,1], siginificando Verdadeiro e Veraddeiro
     if (rede.camadas[-1].feedForward()[0] > 0.5):
         print("Se Verdadeiro e Verdadeiro, então: Verdadeiro")
     else:
