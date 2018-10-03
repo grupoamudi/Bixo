@@ -2,13 +2,13 @@ import LMK
 
 class Bixo:
 
-    estados = {'':,'':,'':,'':,'':}
+    estados = {'':,'':,'':,'':,'':} #mostra o emociona do bixo; tem impacto na interface dele
 
-    leituras = {'Temperatura' : 0, 'Luz' : 0, 'Dist' : 0, 'Visao' : 'Nada'}
+    leituras = {'Temperatura' : 0, 'Luz' : 0, 'Dist' : 0, 'Visao' : 'Nada'} #leituras feitas pelos sensores
 
     def funcionando():
         return True
-
+#declaracao dos sensores
 bixo = Bixo()
 # visao = cv2.cap()
 # sonar = SensorDist()
