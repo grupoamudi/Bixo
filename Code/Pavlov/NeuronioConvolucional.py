@@ -1,3 +1,11 @@
+#############################################
+# Nome: NeuronioConvolucional.py            #
+# Projeto: Projeto Pavlov                   #
+# Autoria: Grupo aMuDi                      #
+# Dependencia: Neuronio.py                  #
+# Status: Concluido                         #
+#############################################
+
 import math
 import random
 import Neuronio
