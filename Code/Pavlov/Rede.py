@@ -52,11 +52,13 @@ class Rede:
             # itera por todos os neuronios dessa camada
             for n in range (len(self.camadas[c].neuronios)):
                 erroSing = 0
-                # itera por cada neuronio da camada seguinte
+                # itera por cada neuronio da camada seguinte calculando o fator de erro necessario
+                #  para o processo de aprendizado deles.
                 for m in range(len(self.camadas[c + 1].neuronios)):
                     erroSing += (self.camadas[c + 1].getGlias()[m] * self.camadas[c + 1].neuronios[m].mielina[n])
                 erro.append(erroSing)
             self.camadas[c].corrigirCamada(erro)
+        # Atualiza as mielinas das camadas da rede
         for c in self.camadas:
             c.atualizarMielinas()
             
